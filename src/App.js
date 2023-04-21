@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense, useState } from 'react'
+// import FakeApi from './FakeApi'; (this part is lazy loading)
+import UseMemoHook from './UseMemoHook';
+import Test from './useRefHooks';
+import Test2 from './Test2';
+import ReferentialEquality from './referential equality/ReferentialEquality';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './errorboundary/ErrorBoundary';
+import SingleItem from './singleItem/SingleItem';
+import ClientErrorCheckingTab from './checkingError/ClientErrorCheckingTab';
+import ClientTable from './clienttable/ClientTable';
+import ClientTableCheck from './clientCheckTable/ClientTableCheck';
+
+import MainTable from './maintable/MainTable';
+const FakeApi = lazy(() => import("./FakeApi.js"))
 
 function App() {
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Test2 /> */}
+      {/* <Test/> */}
+      {/* <ReferentialEquality /> */}
+      {/* <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => { }} >
+        <Suspense fallback={<div>please wait my dear user</div>}> <FakeApi />
+        </Suspense>
+      </ErrorBoundary> */}
+      {/* <UseMemoHook/> */}
+
+      {/* <SingleItem /> */}
+      {/* <ClientErrorCheckingTab /> */}
+      {/* <ClientTable/> */}
+
+      {/* <ClientTableCheck /> */}
+
+
+      <MainTable />
+
+
+
+
     </div>
   );
 }
